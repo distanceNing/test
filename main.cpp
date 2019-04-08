@@ -4,8 +4,6 @@
 
 
 
-template<typename T> T* Push(size_t count = 1);
-
 
 template <typename T>
 void test(T& arg){
@@ -37,8 +35,14 @@ using namespace std;
 
 
 int main() {
+    std::string str1 = "11";
+    const auto &str2 = str1;
 
-    std::vector<StepStateHandle> stepStateHandleVec;
+    if(str1 == "11" || str1 == "22"){
+        cout<<str1;
+    }
+
+    /*std::vector<StepStateHandle> stepStateHandleVec;
 
     stepStateHandleVec.emplace_back("login",[](){
         cout<<2;
@@ -85,7 +89,7 @@ int main() {
 
     stepHandleMap[your_arg]();
 
-
+*/
 
 
 

@@ -27,6 +27,8 @@ namespace Client
         // 发送数据
         private void button2_Click(object sender, EventArgs e)
         {
+            // 获取下拉框中的选择
+            // 以相应的形式去发送
             if (client != null)
             {
                 //要发送的信息
@@ -35,9 +37,23 @@ namespace Client
                     return;
                 }
                 string msg1 = richtext_send.Text.Trim();
+                Int64 num = 0;
+                try {
+                    num =  System.Convert.ToInt64(msg1, 16);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(" 转换失败 " + ex.ToString());
+                    return;
+                }
+
+                Int64 x = IPAddress.HostToNetworkOrder(num);
+                // sendStream.WriteByte(x.)
                 //将信息存入缓存中
-                byte[] buffer = Encoding.Default.GetBytes(msg1);
-                try { 
+                string hexOutput = String.Format("{0:X}", x);
+                //byte[] buffer = System.Convert.ToByte(x);
+                byte[] buffer = Encoding.Default.GetBytes(hexOutput);
+                try {
                     sendStream.Write(buffer, 0, buffer.Length);
                     MessageBox.Show("数据发送成功");
                 }

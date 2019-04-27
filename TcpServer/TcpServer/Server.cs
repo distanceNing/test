@@ -6,11 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Runtime.Serialization;
 namespace TcpServer
 {
     public partial class Server : Form
@@ -97,7 +98,7 @@ namespace TcpServer
                             MessageBox.Show("客户端关闭连接");
                             break;
                         }
-                        recv_buffer += Encoding.Default.GetString(buffer);
+                        recv_buffer = Encoding.UTF8.GetString(buffer, 0, msgsize);
                         MessageBox.Show("接收到数据，请点击显示方式");
                     }
                     catch
@@ -125,15 +126,27 @@ namespace TcpServer
 
         private void hex_button_Click(object sender, EventArgs e)
         {
-            StringBuilder recBuffer16 = new StringBuilder();               //定义16进制接收缓存
-            byte[] buffer = Encoding.Default.GetBytes(recv_buffer);
-            int i = 0;
-            while(buffer[i] != 0)
+
+            //System.Convert.ToString(0xa,10);
+            if (recv_buffer == "")
             {
-                recBuffer16.AppendFormat("{0:X2}" + " ", buffer[i]);//X2表示十六进制格式（大写），域宽2位，不足的左边填0。  
-                i++;
+                return;
+
             }
-            rich_text_recv_data.Text =  recBuffer16.ToString();
+            Int64 num = 0;
+            try
+            {
+                num = System.Convert.ToInt64(recv_buffer, 16);
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(" 转换失败 ");
+            }
+            Int64 x = IPAddress.HostToNetworkOrder(num);
+
+            //StringBuilder recBuffer16 = new StringBuilder();               //定义16进制接收缓存
+            rich_text_recv_data.Text = "\n 十六进制 ：" + String.Format("{0:X}", x).ToLower() + "\n 十进制 ：" + x.ToString();
+            
         }
 
         private void send_btn_Click(object sender, EventArgs e)
@@ -144,6 +157,14 @@ namespace TcpServer
                 byte[] buffer = Encoding.Default.GetBytes(text_send_data.Text.Trim());//将数据存进缓存中
                 sendStream.Write(buffer, 0, buffer.Length);//最终写入流中                                                         
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //string jsonText = @"{""input"" : ""value"", ""output"" : ""result""}";
+           
+
+           
         }
     }
 }

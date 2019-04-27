@@ -41,6 +41,7 @@
             this.hex_button = new System.Windows.Forms.Button();
             this.clear_data = new System.Windows.Forms.Button();
             this.send_btn = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -137,7 +138,7 @@
             this.hex_button.Name = "hex_button";
             this.hex_button.Size = new System.Drawing.Size(107, 23);
             this.hex_button.TabIndex = 7;
-            this.hex_button.Text = "十六进制显示";
+            this.hex_button.Text = "十六进制解析";
             this.hex_button.UseVisualStyleBackColor = true;
             this.hex_button.Click += new System.EventHandler(this.hex_button_Click);
             // 
@@ -161,11 +162,22 @@
             this.send_btn.UseVisualStyleBackColor = true;
             this.send_btn.Click += new System.EventHandler(this.send_btn_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(214, 240);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Json解析";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Server
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 492);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.send_btn);
             this.Controls.Add(this.clear_data);
             this.Controls.Add(this.hex_button);
@@ -202,5 +214,6 @@
         private System.Windows.Forms.Button hex_button;
         private System.Windows.Forms.Button clear_data;
         private System.Windows.Forms.Button send_btn;
+        private System.Windows.Forms.Button button2;
     }
 }

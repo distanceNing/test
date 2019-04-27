@@ -6,3 +6,11 @@ D:\my_code_data\Client\Client\obj\Debug\Client.Properties.Resources.resources
 D:\my_code_data\Client\Client\obj\Debug\Client.csproj.GenerateResource.Cache
 D:\my_code_data\Client\Client\obj\Debug\Client.exe
 D:\my_code_data\Client\Client\obj\Debug\Client.pdb
+D:\my_code_data\test_\Client\Client\bin\Debug\Client.exe.config
+D:\my_code_data\test_\Client\Client\obj\Debug\Client.exe
+D:\my_code_data\test_\Client\Client\obj\Debug\Client.pdb
+D:\my_code_data\test_\Client\Client\bin\Debug\Client.exe
+D:\my_code_data\test_\Client\Client\bin\Debug\Client.pdb
+D:\my_code_data\test_\Client\Client\obj\Debug\Client.Cient.resources
+D:\my_code_data\test_\Client\Client\obj\Debug\Client.Properties.Resources.resources
+D:\my_code_data\test_\Client\Client\obj\Debug\Client.csproj.GenerateResource.Cache

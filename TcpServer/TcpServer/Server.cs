@@ -133,20 +133,25 @@ namespace TcpServer
                 return;
 
             }
-            Int64 num = 0;
-            try
-            {
-                num = System.Convert.ToInt64(recv_buffer, 16);
-            }
-            catch (Exception ex) 
-            {
-                MessageBox.Show(" 转换失败 ");
-            }
-            Int64 x = IPAddress.HostToNetworkOrder(num);
+            string[] sArray = recv_buffer.Split(' ');
+            string hex_content = "";
+            foreach (string str in sArray) { 
+                Int64 num = 0;
+                try
+                {
+                    num = System.Convert.ToInt64(str, 16);
+                }
+                catch (Exception ex) 
+                {
+                    MessageBox.Show(" 转换失败 ");
+                }
+                // Int64 x = IPAddress.HostToNetworkOrder(num);
 
-            //StringBuilder recBuffer16 = new StringBuilder();               //定义16进制接收缓存
-            rich_text_recv_data.Text = "\n 十六进制 ：" + String.Format("{0:X}", x).ToLower() + "\n 十进制 ：" + x.ToString();
-            
+                //StringBuilder recBuffer16 = new StringBuilder();               //定义16进制接收缓存
+                hex_content  += "十六进制 ：" + String.Format("{0:X}", num).ToLower() + "\t 十进制 ：" + num.ToString() + "\n";
+            }
+            rich_text_recv_data.Text = hex_content;
+
         }
 
         private void send_btn_Click(object sender, EventArgs e)

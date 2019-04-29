@@ -36,7 +36,7 @@ namespace Client
                     MessageBox.Show(" 数据为空，请输入数据 ");
                     return;
                 }
-                string msg1 = richtext_send.Text.Trim();
+                /*string msg1 = richtext_send.Text.Trim();
                 Int64 num = 0;
                 try {
                     num =  System.Convert.ToInt64(msg1, 16);
@@ -51,8 +51,8 @@ namespace Client
                 // sendStream.WriteByte(x.)
                 //将信息存入缓存中
                 string hexOutput = String.Format("{0:X}", x);
-                //byte[] buffer = System.Convert.ToByte(x);
-                byte[] buffer = Encoding.Default.GetBytes(hexOutput);
+                //byte[] buffer = System.Convert.ToByte(x);*/
+                byte[] buffer = Encoding.Default.GetBytes((richtext_send.Text.Trim()));
                 try {
                     sendStream.Write(buffer, 0, buffer.Length);
                     MessageBox.Show("数据发送成功");

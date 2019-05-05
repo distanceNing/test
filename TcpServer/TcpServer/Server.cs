@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.Xml;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -12,6 +9,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Xml;
 namespace TcpServer
 {
     public partial class Server : Form
@@ -163,12 +163,16 @@ namespace TcpServer
                 sendStream.Write(buffer, 0, buffer.Length);//最终写入流中                                                         
             }
         }
-
+       
         private void button2_Click(object sender, EventArgs e)
         {
-            //string jsonText = @"{""input"" : ""value"", ""output"" : ""result""}";
            
+            rich_text_recv_data.Text = Proto.parseJson(recv_buffer);
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            rich_text_recv_data.Text =  Proto.parseXML(recv_buffer);
            
         }
     }

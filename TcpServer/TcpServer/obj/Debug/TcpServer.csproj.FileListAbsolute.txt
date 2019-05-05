@@ -16,3 +16,5 @@ D:\my_code_data\test_\TcpServer\TcpServer\obj\Debug\TcpServer.csprojResolveAssem
 D:\my_code_data\test_\TcpServer\TcpServer\obj\Debug\TcpServer.Properties.Resources.resources
 D:\my_code_data\test_\TcpServer\TcpServer\obj\Debug\TcpServer.Server.resources
 D:\my_code_data\test_\TcpServer\TcpServer\obj\Debug\TcpServer.csproj.GenerateResource.Cache
+D:\my_code_data\test_\TcpServer\TcpServer\bin\Debug\Newtonsoft.Json.dll
+D:\my_code_data\test_\TcpServer\TcpServer\bin\Debug\Newtonsoft.Json.xml

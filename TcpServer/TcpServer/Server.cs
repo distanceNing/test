@@ -98,7 +98,7 @@ namespace TcpServer
                             MessageBox.Show("客户端关闭连接");
                             break;
                         }
-                        recv_buffer = Encoding.UTF8.GetString(buffer, 0, msgsize);
+                        recv_buffer = Encoding.Unicode.GetString(buffer, 0, msgsize);
                         MessageBox.Show("接收到数据，请点击显示方式");
                     }
                     catch
@@ -159,7 +159,7 @@ namespace TcpServer
             if (text_send_data.Text.Trim() != string.Empty)
             {
                 NetworkStream sendStream = client.GetStream();//获得用于数据传输的流
-                byte[] buffer = Encoding.Default.GetBytes(text_send_data.Text.Trim());//将数据存进缓存中
+                byte[] buffer = Encoding.Unicode.GetBytes(text_send_data.Text.Trim());//将数据存进缓存中
                 sendStream.Write(buffer, 0, buffer.Length);//最终写入流中                                                         
             }
         }

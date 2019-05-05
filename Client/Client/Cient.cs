@@ -36,23 +36,7 @@ namespace Client
                     MessageBox.Show(" 数据为空，请输入数据 ");
                     return;
                 }
-                /*string msg1 = richtext_send.Text.Trim();
-                Int64 num = 0;
-                try {
-                    num =  System.Convert.ToInt64(msg1, 16);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(" 转换失败 " + ex.ToString());
-                    return;
-                }
-
-                Int64 x = IPAddress.HostToNetworkOrder(num);
-                // sendStream.WriteByte(x.)
-                //将信息存入缓存中
-                string hexOutput = String.Format("{0:X}", x);
-                //byte[] buffer = System.Convert.ToByte(x);*/
-                byte[] buffer = Encoding.Default.GetBytes((richtext_send.Text.Trim()));
+                byte[] buffer = Encoding.Unicode.GetBytes((richtext_send.Text.Trim()));
                 try {
                     sendStream.Write(buffer, 0, buffer.Length);
                     MessageBox.Show("数据发送成功");
@@ -78,7 +62,7 @@ namespace Client
                         msgsize1 = sendStream.Read(buffer, 0, bufferSize);
                     }
                     string RecvDataText = null;
-                    RecvDataText = Encoding.Default.GetString(buffer);       //转换成string 并储存在 RecvDataText
+                    RecvDataText = Encoding.Unicode.GetString(buffer);       //转换成string 并储存在 RecvDataText
 
                     // this.Invoke就是跨线程访问ui的方法
                     Invoke((EventHandler)(delegate

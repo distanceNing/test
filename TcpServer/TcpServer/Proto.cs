@@ -13,13 +13,20 @@ namespace TcpServer
         public static string parseJson(string json_str) {
             if (json_str == "")
                 return "";
-            JObject obj = JObject.Parse(json_str);
             string content = "";
-            foreach (var x in obj)
-            {
-                content += (x.Key + " : " + x.Value + "\n");
-            }
 
+            try
+            {
+                JObject obj  = JObject.Parse(json_str);
+                foreach (var x in obj)
+                {
+                    content += (x.Key + " : " + x.Value + "\n");
+                }
+            }
+            catch (Exception e)
+            {
+                return "";
+            }
             return content; 
         }
 
@@ -29,11 +36,18 @@ namespace TcpServer
         }
 
         public static string parseXML(string xml_str) {
-            XmlDocument xmlDoc = new XmlDocument();//初始化一个xml实例
-            xmlDoc.LoadXml(xml_str);
-            XmlNode root = xmlDoc.SelectSingleNode("/");
-            XmlNodeList childlist = root.ChildNodes;
-            return implParseXML(childlist);
+            try
+            {
+
+                XmlDocument xmlDoc = new XmlDocument();//初始化一个xml实例
+                xmlDoc.LoadXml(xml_str);
+                XmlNode root = xmlDoc.SelectSingleNode("/");
+                XmlNodeList childlist = root.ChildNodes;
+                return implParseXML(childlist);
+            }
+            catch (Exception e) {
+                return "";
+            }
         }
         private static string implParseXML(XmlNodeList childlist)
         {

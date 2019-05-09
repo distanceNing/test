@@ -33,8 +33,6 @@
             this.text_port = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.proto_selected = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.richtext_send = new System.Windows.Forms.RichTextBox();
             this.rich_text_recv = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -85,23 +83,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Port";
             // 
-            // proto_selected
-            // 
-            this.proto_selected.FormattingEnabled = true;
-            this.proto_selected.Location = new System.Drawing.Point(124, 174);
-            this.proto_selected.Name = "proto_selected";
-            this.proto_selected.Size = new System.Drawing.Size(121, 20);
-            this.proto_selected.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 182);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "编解码：";
-            // 
             // richtext_send
             // 
             this.richtext_send.Location = new System.Drawing.Point(124, 250);
@@ -136,8 +117,6 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.rich_text_recv);
             this.Controls.Add(this.richtext_send);
-            this.Controls.Add(this.proto_selected);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.text_port);
@@ -157,8 +136,6 @@
         private System.Windows.Forms.TextBox text_port;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox proto_selected;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox richtext_send;
         private System.Windows.Forms.RichTextBox rich_text_recv;
         private System.Windows.Forms.Button button2;

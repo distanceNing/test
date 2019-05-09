@@ -22,13 +22,16 @@ namespace Client
         public Cient()
         {
             InitializeComponent();
+            this.proto_selected.Items.Add("json");
+            this.proto_selected.Items.Add("xml");
+            this.proto_selected.Items.Add("string");
+            this.proto_selected.Items.Add("hex");
         }
 
         // 发送数据
         private void button2_Click(object sender, EventArgs e)
         {
-            // 获取下拉框中的选择
-            // 以相应的形式去发送
+            
             if (client != null)
             {
                 //要发送的信息
@@ -36,8 +39,9 @@ namespace Client
                     MessageBox.Show(" 数据为空，请输入数据 ");
                     return;
                 }
-                byte[] buffer = Encoding.Unicode.GetBytes((richtext_send.Text.Trim()));
-                try {
+                byte[] buffer = Encoding.Default.GetBytes((richtext_send.Text.Trim()));
+                
+                try { 
                     sendStream.Write(buffer, 0, buffer.Length);
                     MessageBox.Show("数据发送成功");
                 }
@@ -62,7 +66,7 @@ namespace Client
                         msgsize1 = sendStream.Read(buffer, 0, bufferSize);
                     }
                     string RecvDataText = null;
-                    RecvDataText = Encoding.Unicode.GetString(buffer);       //转换成string 并储存在 RecvDataText
+                    RecvDataText = Encoding.Default.GetString(buffer);       //转换成string 并储存在 RecvDataText
 
                     // this.Invoke就是跨线程访问ui的方法
                     Invoke((EventHandler)(delegate

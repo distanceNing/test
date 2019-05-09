@@ -37,12 +37,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.text_send_data = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.hex_button = new System.Windows.Forms.Button();
             this.clear_data = new System.Windows.Forms.Button();
             this.send_btn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -123,29 +120,9 @@
             this.text_send_data.Size = new System.Drawing.Size(504, 21);
             this.text_send_data.TabIndex = 2;
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(76, 195);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "字符显示";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // hex_button
-            // 
-            this.hex_button.Location = new System.Drawing.Point(214, 195);
-            this.hex_button.Name = "hex_button";
-            this.hex_button.Size = new System.Drawing.Size(107, 23);
-            this.hex_button.TabIndex = 7;
-            this.hex_button.Text = "十六进制解析";
-            this.hex_button.UseVisualStyleBackColor = true;
-            this.hex_button.Click += new System.EventHandler(this.hex_button_Click);
-            // 
             // clear_data
             // 
-            this.clear_data.Location = new System.Drawing.Point(401, 195);
+            this.clear_data.Location = new System.Drawing.Point(219, 203);
             this.clear_data.Name = "clear_data";
             this.clear_data.Size = new System.Drawing.Size(75, 23);
             this.clear_data.TabIndex = 8;
@@ -165,35 +142,22 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(214, 240);
+            this.button2.Location = new System.Drawing.Point(64, 203);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 10;
-            this.button2.Text = "Json解析";
+            this.button2.Text = "数据解析";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(401, 240);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "XML解析";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Server
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 492);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.send_btn);
             this.Controls.Add(this.clear_data);
-            this.Controls.Add(this.hex_button);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.rich_text_recv_data);
             this.Controls.Add(this.text_send_data);
             this.Controls.Add(this.text_port);
@@ -222,11 +186,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox text_send_data;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button hex_button;
         private System.Windows.Forms.Button clear_data;
         private System.Windows.Forms.Button send_btn;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
     }
 }

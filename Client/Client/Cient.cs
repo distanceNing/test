@@ -22,10 +22,6 @@ namespace Client
         public Cient()
         {
             InitializeComponent();
-            this.proto_selected.Items.Add("json");
-            this.proto_selected.Items.Add("xml");
-            this.proto_selected.Items.Add("string");
-            this.proto_selected.Items.Add("hex");
         }
 
         // 发送数据

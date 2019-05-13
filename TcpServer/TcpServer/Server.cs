@@ -211,13 +211,20 @@ namespace TcpServer
         }
 
         private int check_proto_type() {
-            if (Proto.parseJson(recv_buffer) != "") {
+            string content = "";
+            if ((content = Proto.parseJson(recv_buffer)) != "")
+            {
+                rich_text_recv_data.Text = content;
                 return proto_type_map["json"];
-            }else if(Proto.parseXML(recv_buffer) != "")
+            }
+            else if ((content = Proto.parseXML(recv_buffer)) != "")
+            {
+                rich_text_recv_data.Text = content;
                 return proto_type_map["xml"];
-            else if(hex_handle())
+            }
+            else if (hex_handle())
                 return proto_type_map["hex"];
-            else if(is_hex_str())
+            else if (is_hex_str())
                 return proto_type_map["hex_string"];
             return proto_type_map["string"];
         }
@@ -235,8 +242,6 @@ namespace TcpServer
                 return ;
 
             }
-          
-            recv_buffer = recv_buffer.Remove(0, 1);
             int proto_type = check_proto_type();
             switch (proto_type) {
                 case 1:
@@ -263,7 +268,7 @@ namespace TcpServer
 
         private bool hex_string_handle() {
             if ((recv_buffer.Length % 2) != 0)
-                recv_buffer += " ";
+                recv_buffer += "";
             byte[] returnBytes = new byte[recv_buffer.Length / 2];
             for (int i = 0; i < returnBytes.Length; i++)
                 returnBytes[i] = Convert.ToByte(recv_buffer.Substring(i * 2, 2), 16);

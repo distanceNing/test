@@ -162,12 +162,7 @@ namespace TcpServer
 
         private void send_btn_Click(object sender, EventArgs e)
         {
-            if (text_send_data.Text.Trim() != string.Empty)
-            {
-                NetworkStream sendStream = client.GetStream();//获得用于数据传输的流
-                byte[] buffer = Encoding.Default.GetBytes(text_send_data.Text.Trim());//将数据存进缓存中
-                sendStream.Write(buffer, 0, buffer.Length);//最终写入流中                                                         
-            }
+          
         }
 
         private bool is_json_str() {
@@ -236,7 +231,7 @@ namespace TcpServer
         // 4 : hex
         private void button2_Click(object sender, EventArgs e)
         {
-            if (recv_buffer == "")
+            if (recv_buffer != "")
             {
                 MessageBox.Show("接收到的数据为空");
                 return ;

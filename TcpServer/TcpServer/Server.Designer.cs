@@ -35,10 +35,7 @@
             this.text_port = new System.Windows.Forms.TextBox();
             this.rich_text_recv_data = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.text_send_data = new System.Windows.Forms.TextBox();
             this.clear_data = new System.Windows.Forms.Button();
-            this.send_btn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -104,22 +101,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "recv data:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(74, 401);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 12);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "send data:";
-            // 
-            // text_send_data
-            // 
-            this.text_send_data.Location = new System.Drawing.Point(76, 445);
-            this.text_send_data.Name = "text_send_data";
-            this.text_send_data.Size = new System.Drawing.Size(504, 21);
-            this.text_send_data.TabIndex = 2;
-            // 
             // clear_data
             // 
             this.clear_data.Location = new System.Drawing.Point(219, 203);
@@ -129,16 +110,6 @@
             this.clear_data.Text = "清空数据";
             this.clear_data.UseVisualStyleBackColor = true;
             this.clear_data.Click += new System.EventHandler(this.clear_data_Click);
-            // 
-            // send_btn
-            // 
-            this.send_btn.Location = new System.Drawing.Point(650, 442);
-            this.send_btn.Name = "send_btn";
-            this.send_btn.Size = new System.Drawing.Size(75, 23);
-            this.send_btn.TabIndex = 9;
-            this.send_btn.Text = "发送";
-            this.send_btn.UseVisualStyleBackColor = true;
-            this.send_btn.Click += new System.EventHandler(this.send_btn_Click);
             // 
             // button2
             // 
@@ -156,13 +127,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 492);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.send_btn);
             this.Controls.Add(this.clear_data);
             this.Controls.Add(this.rich_text_recv_data);
-            this.Controls.Add(this.text_send_data);
             this.Controls.Add(this.text_port);
             this.Controls.Add(this.text_ip_addr);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.IP);
@@ -184,10 +152,7 @@
         private System.Windows.Forms.TextBox text_port;
         private System.Windows.Forms.RichTextBox rich_text_recv_data;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox text_send_data;
         private System.Windows.Forms.Button clear_data;
-        private System.Windows.Forms.Button send_btn;
         private System.Windows.Forms.Button button2;
     }
 }

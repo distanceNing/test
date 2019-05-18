@@ -231,7 +231,7 @@ namespace TcpServer
         // 4 : hex
         private void button2_Click(object sender, EventArgs e)
         {
-            if (recv_buffer != "")
+            if (recv_buffer ==  "")
             {
                 MessageBox.Show("接收到的数据为空");
                 return ;

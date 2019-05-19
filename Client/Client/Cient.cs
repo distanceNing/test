@@ -72,7 +72,7 @@ namespace Client
                         {
                             recBuffer16.AppendFormat("{0:X2}" + " ", buffer[i]);//X2表示十六进制格式（大写），域宽2位，不足的左边填0。  
                         }
-                        rich_text_recv.Text += recBuffer16.ToString();//加显到接收区  
+                        // rich_text_recv.Text += recBuffer16.ToString();//加显到接收区  
                     }));
                 }
                 catch

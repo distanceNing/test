@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.richtext_send = new System.Windows.Forms.RichTextBox();
-            this.rich_text_recv = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -91,14 +90,6 @@
             this.richtext_send.TabIndex = 4;
             this.richtext_send.Text = "";
             // 
-            // rich_text_recv
-            // 
-            this.rich_text_recv.Location = new System.Drawing.Point(124, 431);
-            this.rich_text_recv.Name = "rich_text_recv";
-            this.rich_text_recv.Size = new System.Drawing.Size(397, 94);
-            this.rich_text_recv.TabIndex = 4;
-            this.rich_text_recv.Text = "";
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(576, 250);
@@ -113,9 +104,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 608);
+            this.ClientSize = new System.Drawing.Size(699, 417);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.rich_text_recv);
             this.Controls.Add(this.richtext_send);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -137,7 +127,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox richtext_send;
-        private System.Windows.Forms.RichTextBox rich_text_recv;
         private System.Windows.Forms.Button button2;
     }
 }
